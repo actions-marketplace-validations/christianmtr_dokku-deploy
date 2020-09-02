@@ -21,6 +21,14 @@ inputs:
     description: "Forces git push command with --force flag."
     required: false
     default: "false"
+  repo-branch:
+    description: "The repo branch that will be pushed to dokku app."
+    required: false
+    default: "master"
+  remote-branch:
+    description: "The deploy branch used on dokku app."
+    required: false
+    default: "master"
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -30,3 +38,5 @@ runs:
     - ${{ inputs.dokku-app }}
     - ${{ inputs.dokku-user }}
     - ${{ inputs.force-push }}
+    - ${{ inputs.repo-branch }}
+    - ${{ inputs.remote-branch }}

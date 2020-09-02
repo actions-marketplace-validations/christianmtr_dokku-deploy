@@ -16,6 +16,8 @@
 | `dokku-app` | true | Application name on dokku. | your-app |
 | `dokku-user` | false | Username for dokku host. | default: dokku |
 | `force-push` | false | Forces git push command with --force flag. | default: false |
+| `repo-branch` | false | The repo branch that will be pushed to dokku app. | default: master |
+| `remote-branch` | false | The deploy branch used on dokku app. | default: master |
 
 <br>
 

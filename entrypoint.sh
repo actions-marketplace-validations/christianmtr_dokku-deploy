@@ -5,6 +5,8 @@ DOKKU_HOST=$2
 DOKKU_APP=$3
 DOKKU_USER=$4
 FORCE_PUSH=$5
+REPO_BRANCH=$6
+REMOTE_BRANCH=$7
 
 echo "Setting up ssh environment."
 
@@ -20,11 +22,11 @@ cd $GITHUB_WORKSPACE
 
 git remote add dokku $repo
 
-GIT_CMD="git push dokku master"
+GIT_CMD="git push dokku $REPO_BRANCH:$REMOTE_BRANCH"
 
 if [ "$FORCE_PUSH" == true ]; then
     echo "Enabled force push."
-    GIT_CMD="git push dokku master --force"
+    GIT_CMD="git push dokku $REPO_BRANCH:$REMOTE_BRANCH --force"
 fi
 
 echo "Deploy started."
