@@ -49,3 +49,30 @@ jobs:
           dokku-host: "your-dokku-host.com"
           dokku-app: "your-app"
 ```
+
+```yaml
+name: "Deploy to dokku (develop branch)"
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+        fetch-depth: 0
+
+      - name: "Deploy to dokku"
+        uses:  christianmtr/dokku-deploy@master
+        with:
+          dokku-deploy-key: ${{ secrets.DOKKU_DEPLOY_KEY }}
+          dokku-host: "your-dokku-host.com"
+          dokku-app: "your-app"
+          repo-branch: "develop"
+          remote-branch: "master"
+```
