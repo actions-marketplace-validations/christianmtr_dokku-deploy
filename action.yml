@@ -1,4 +1,4 @@
-name: "Dokku Deployment"
+name: "Dokku smart Deployment"
 description: "Deploys your project to dokku."
 branding:
   icon: "upload-cloud"
