@@ -68,7 +68,7 @@ jobs:
         fetch-depth: 0
 
       - name: "Deploy to dokku"
-        uses:  christianmtr/dokku-deploy@master
+        uses: christianmtr/dokku-deploy@master
         with:
           dokku-deploy-key: ${{ secrets.DOKKU_DEPLOY_KEY }}
           dokku-host: "your-dokku-host.com"
